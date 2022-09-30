@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  server-mine:
+    container_name: Docker_Mine
+    image: srv_mine
+    command: java -Xms6G -Xmx8G -jar forge-1.12.2-14.23.5.2860.jar nogui
+    volumes:
+      - '$PWD/data:/mine'
+    ports:
+      - 25565:25565
+    mem_limit: 8G
+    mem_reservation: 6G
+    restart: always
